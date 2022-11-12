@@ -10,7 +10,7 @@
  * @param {Node|null} root
  * @return {number[]}
  */
-var preorder = function(root, arr = []) {
+var preorder = function(root, arr = [[]]) {
   if(!root) return arr;
   arr.push(root.val)
   for(let child of root.children) preorder(child, arr)
