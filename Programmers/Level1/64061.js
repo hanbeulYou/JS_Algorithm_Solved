@@ -6,8 +6,8 @@ function solution(board, moves) {
     moves.forEach((move) => {
         for(let i=0; i<N; i++) {
             if(board[i][move-1] !== 0) {
-                board[i][move-1] = 0
                 pickedStack.push(board[i][move-1])
+                board[i][move-1] = 0
                 break
             }
         }
