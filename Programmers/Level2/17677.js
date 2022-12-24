@@ -5,10 +5,10 @@ function isAlpha(char) {
 
 function makeSubset(str) {
     const strArr = str.toUpperCase().split('')
-    const resultSet = new Set()
+    const resultSet = new Array()
     for(let i=0; i<strArr.length-1; i++) {
         if(isAlpha(strArr[i]) && isAlpha(strArr[i+1])) {
-            resultSet.add(strArr.slice(i, i+2).join(''))
+            resultSet.push(strArr.slice(i, i+2).join(''))
         }
     }
     return resultSet
@@ -50,8 +50,8 @@ function solution(str1, str2) {
     const str2Set = makeSubset(str2)
     union = makeUnion(str1Set, str2Set)
     inter = makeInter(str1Set, str2Set)
-    if(union.size === 0) return 65536
-    return parseInt(inter.size/union.size*65536);
+    if(union.length === 0) return 65536
+    return parseInt(inter.length/union.length*65536);
 }
 // set이 아니라 array로 풀어야함
 console.log(solution("handshake", "shake hands"))
