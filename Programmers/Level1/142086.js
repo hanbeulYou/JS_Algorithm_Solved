@@ -6,6 +6,8 @@ function solution(s) {
       lastIndex[e] = index
       return answer.push(-1)
     }
+    answer.push(index - lastIndex[e])
+    lastIndex[e] = index
   })
   return answer;
 }
