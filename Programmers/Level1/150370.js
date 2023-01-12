@@ -22,6 +22,7 @@ function solution(today, terms, privacies) {
   privacies.forEach((privacy, index) => {
     const startDate = makeDate(privacy)
     const validity = privacy.slice(-1)
+    console.log(startDate+validities[validity])
     if(startDate + validities[validity] <= todayDate) answer.push(index+1)
   })
   return answer
