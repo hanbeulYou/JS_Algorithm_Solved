@@ -21,7 +21,7 @@ function solution(n, works) {
   const answer = sortedWorks.reduce((acc, cur) => {
     return acc + cur ** 2;
   }, 0)
-  return parseInt(answer);
+  return answer;
 }
 
 console.log(solution(99, [2, 15, 22, 55, 55]))
