@@ -1,4 +1,3 @@
-
 function initDict() {
     const dict = {}
     for(let i=1; i<=26; i++) {
@@ -21,6 +20,10 @@ function solution(msg) {
             const newMsg = msgArr.slice(i, i+j).join('')
             if(Object.keys(dict).includes(newMsg)) {
                 lastMsg = dict[newMsg]
+                if(j === msg.length-i) {
+                    i = msg.length;
+                    break;
+                }
                 continue
             }
             dict[newMsg] = cnt
@@ -29,7 +32,6 @@ function solution(msg) {
             answer.push(lastMsg)
             break
         }
-        if(i===msg.length-1) break
     }
     answer.push(lastMsg)
     return answer;
